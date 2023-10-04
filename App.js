@@ -2,7 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-
+import {LogBox} from 'react-native';
 
 
 import HomeScreen from './Home.js'
@@ -16,6 +16,9 @@ import Profile from './Profile.js';
 
 
 const Stack = createNativeStackNavigator();
+
+LogBox.ignoreLogs(['Warning: ...']);
+LogBox.ignoreAllLogs();
 
 
 const users = [

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Pressable } from 'react-native';
 import ItemInput from './ItemInput';
 import Body from './components/Body.js';
 import Footer from './components/Footer.js';
@@ -50,7 +50,7 @@ const Makebill2 = ({ navigation }) => {
       })
       .catch((error) => {
         console.error('Error:', error);
-        setResponseText('Error occur');
+        setResponseText('Error occured');
       });
 
   };
@@ -69,7 +69,9 @@ const Makebill2 = ({ navigation }) => {
         </View>
       ))}
       <ItemInput onSave={handleSave} />
-      <Button title="Submit" onPress={handleGenerateJSON} style={styles.submitButton} />
+      <Pressable onPress={handleGenerateJSON} style={styles.submitButton}>
+    <Text style={{ color: 'white', textAlign: 'center' , fontSize: 25}}>Submit</Text>
+  </Pressable>
       {responseText && <Text style={{alignSelf : 'center'}}>{responseText}</Text>}
       <Subfooter />
       <Footer />
@@ -89,6 +91,8 @@ const styles = StyleSheet.create({
 
   },
   itemContainer: {
+    width: "30%",
+    alignSelf: "center",
     backgroundColor: '#3498DB',
     padding: 10,
     marginVertical: 5,
@@ -103,10 +107,13 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   submitButton: {
-    backgroundColor: '#27AE60', // Vibrant green color
-    borderRadius: 10,
+    fontSize: "40",
+    width: "30%",
+    alignSelf: "center",
+    backgroundColor: '#27AE60',
+    borderRadius: 5,
     marginTop: 10,
-    shadowColor: '#27AE60',
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: 4,

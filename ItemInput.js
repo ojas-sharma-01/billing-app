@@ -16,7 +16,7 @@ const ItemInput = ({ onSave }) => {
   const handleSubmit = () => {
     onSave(itemData);
 
-    // Clear the input fields if needed
+
     setItemData({
       itemName: '',
       itemPrice: '',
@@ -26,13 +26,15 @@ const ItemInput = ({ onSave }) => {
   return (
     <View style={styles.basic}>
       <TextInput
-        placeholder="Item Name"
+        placeholder="Enter Item Name" style={{borderWidth: 1,  borderColor : "gray", paddingHorizontal: 10,
+    marginBottom: 10,}}
         value={itemData.itemName}
 
         onChangeText={(text) => handleInputChange('itemName', text)}
       />
       <TextInput
-        placeholder="Item Price"
+        placeholder="Enter Item Price" style={{borderWidth: 1,  borderColor : "gray", paddingHorizontal: 10,
+    marginBottom: 10,}}
         value={itemData.itemPrice}
 
         onChangeText={(text) => handleInputChange('itemPrice', text)}
